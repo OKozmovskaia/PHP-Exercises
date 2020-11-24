@@ -76,10 +76,10 @@ function generateWord($lengthWord) {
 
 ?>
 <br><br>
-<div>Short word: <?php if (isset($_GET['submit'])) {echo(generateWord(5));}; ?></div><br>
-<div>Long word: <?php if (isset($_GET['submit'])) {echo(generateWord(15));}; ?></div>
+<div>Short word: <?php echo isset($_POST['submit'])? generateWord(5): ''; ?></div><br>
+<div>Long word: <?php echo isset($_POST['submit'])? generateWord(15): ''; ?></div>
 <br><br>
-<form action="" method="GET">
+<form action="" method="POST">
   <input type="submit" name="submit" value="Generate new unknown words">
 </form>
 
